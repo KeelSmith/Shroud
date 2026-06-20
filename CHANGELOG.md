@@ -6,21 +6,25 @@ All notable changes to this project are documented here. The format is based on
 
 ## [Unreleased]
 
-### Added
-- Honest competitive positioning in the README (drop-in SDK-wrapper ergonomics / "no Python
-  sidecar"; a "How it compares" table) + a feedback channel (issue templates, README CTA).
-- `NOTICE` + README acknowledgements crediting gitleaks / WHATWG / Presidio for pattern sourcing.
-- ReDoS/perf guard (`tests/redos.test.ts`); **fixed** the email detector's quadratic
-  backtracking on large no-`@` inputs (leading negative lookbehind). Node 18 added to CI.
-- Publish metadata: `repository` / `homepage` / `bugs` / `publishConfig` (npm page now links to
-  source); fixed `detectAll` overlap resolution to O(n log n); final pre-publish dimensional
-  validation recorded (build-complete, market-unproven).
+## [0.1.1] — 2026-06-20
+
+### Fixed
+- Raised the supported Node floor to **>=20** and dropped Node 18 from the CI matrix: the dev
+  toolchain (Vitest 4, ESLint 10) requires Node 20+, and Node 18 is end-of-life. (CI on Node 18
+  failed; Node 20 and 22 pass.)
 
 ## [0.1.0] — 2026-06-18
 
 First public release of the free core.
 
 ### Added
+- Honest competitive positioning in the README (drop-in SDK-wrapper ergonomics / "no Python
+  sidecar"; a "How it compares" table) + a feedback channel (issue templates, README CTA).
+- `NOTICE` + README acknowledgements crediting gitleaks / WHATWG / Presidio for pattern sourcing.
+- ReDoS/perf guard (`tests/redos.test.ts`); **fixed** the email detector's quadratic
+  backtracking on large no-`@` inputs (leading negative lookbehind).
+- Publish metadata: `repository` / `homepage` / `bugs` / `publishConfig` (npm page links to
+  source); `detectAll` overlap resolution made O(n log n).
 - Project scaffolding to a senior-team day-one standard: community-health files,
   hygiene files, TypeScript + npm toolchain, ESLint, Vitest with coverage thresholds, CI,
   and the ADR system.

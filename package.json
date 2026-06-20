@@ -1,6 +1,6 @@
 {
   "name": "shroud-ai",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Redact sensitive data (emails, phones, cards, secrets) before it reaches an AI model, and rehydrate it in the reply.",
   "type": "module",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "anonymization"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

@@ -16,7 +16,7 @@ in it.
 
 ## Development setup
 
-Requirements: **Node >= 18** and **npm**.
+Requirements: **Node >= 20** and **npm**.
 
 ```sh
 git clone <repo-url> shroud
