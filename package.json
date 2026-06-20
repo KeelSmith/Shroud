@@ -1,0 +1,100 @@
+{
+  "name": "shroud-ai",
+  "version": "0.1.0",
+  "description": "Redact sensitive data (emails, phones, cards, secrets) before it reaches an AI model, and rehydrate it in the reply.",
+  "type": "module",
+  "license": "MIT",
+  "author": "The Shroud Authors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeelSmith/Shroud.git"
+  },
+  "homepage": "https://github.com/KeelSmith/Shroud#readme",
+  "bugs": {
+    "url": "https://github.com/KeelSmith/Shroud/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "redaction",
+    "pii",
+    "privacy",
+    "secrets",
+    "openai",
+    "anthropic",
+    "anonymization"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./openai": {
+      "types": "./dist/wrappers/openai.d.ts",
+      "import": "./dist/wrappers/openai.js"
+    },
+    "./anthropic": {
+      "types": "./dist/wrappers/anthropic.d.ts",
+      "import": "./dist/wrappers/anthropic.js"
+    },
+    "./ai": {
+      "types": "./dist/wrappers/ai.d.ts",
+      "import": "./dist/wrappers/ai.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "verify": "npm run lint && npm run typecheck && npm run build && npm run test:coverage",
+    "prepare": "husky",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@anthropic-ai/sdk": ">=0.27.0",
+    "ai": ">=3.0.0",
+    "openai": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@anthropic-ai/sdk": {
+      "optional": true
+    },
+    "ai": {
+      "optional": true
+    },
+    "openai": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.5.3",
+    "@commitlint/config-conventional": "^20.5.3",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.9.3",
+    "@vitest/coverage-v8": "^4.1.9",
+    "eslint": "^10.5.0",
+    "fast-check": "^4.8.0",
+    "husky": "^9.1.7",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1",
+    "vitest": "^4.1.9"
+  }
+}

@@ -1,0 +1,21 @@
+Shroud (shroud-ai)
+Copyright (c) 2026 The Shroud Authors
+
+This product is licensed under the MIT License. See the LICENSE file for the
+full license text.
+
+----------------------------------------------------------------------
+Acknowledgements (pattern sourcing)
+----------------------------------------------------------------------
+
+Shroud's detection patterns were informed by — not copied from — the following
+open, public sources. No third-party code is vendored; the implementations are
+original. These are credited per docs/research/detection-prior-art.md.
+
+- gitleaks (MIT License) — provider secret/API-key regex shapes
+  https://github.com/gitleaks/gitleaks
+- WHATWG HTML Standard — the `<input type=email>` email validation pattern
+  https://html.spec.whatwg.org/multipage/input.html
+- Microsoft Presidio (MIT License) — the recognizer + validation-hook design
+  and credit-card (Luhn + IIN/BIN) validation approach
+  https://github.com/microsoft/presidio

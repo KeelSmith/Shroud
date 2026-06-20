@@ -1,0 +1,8 @@
+* text=auto eol=lf
+
+# Generated / vendored output should not skew language stats or diffs.
+dist/**        linguist-generated=true
+package-lock.json linguist-generated=true
+
+# Ensure shell scripts keep LF regardless of platform.
+*.sh text eol=lf

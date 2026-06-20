@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Test / coverage artifacts
+coverage/
+.vitest/
+
+
+# Logs & OS cruft
+*.log
+.DS_Store
+
+# Editor
+.idea/
+*.swp

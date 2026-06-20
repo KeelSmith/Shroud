@@ -1,0 +1,9 @@
+npm run lint
+
+# Secret scan. The authoritative gate is CI; run locally if
+# gitleaks is installed so secrets are caught before they ever land in a commit.
+if command -v gitleaks >/dev/null 2>&1; then
+  gitleaks protect --staged --no-banner
+else
+  echo "shroud: gitleaks not found on PATH — skipping local secret scan (CI still enforces it)."
+fi
